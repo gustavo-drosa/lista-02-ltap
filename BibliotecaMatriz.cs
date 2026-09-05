@@ -66,5 +66,27 @@ namespace BibliotecaMatriz
 
       return menorValor;
     }
+
+    public static void mostrarDiagonalPrincipal(int[,] matriz)
+    {
+      Console.WriteLine("Diagonal Principal: ");
+
+      for (int i = 0; i < matriz.GetLength(0); i++)
+        for (int j = 0; j < matriz.GetLength(1); j++)
+          if (i == j)
+            Console.WriteLine($"{matriz[i, j],3}|");
+    }
+
+    public static void mostrarDiagonalSecundaria(int[,] matriz)
+    {
+      Console.WriteLine("Diagonal Secundaria: ");
+
+      for (int i = 0; i < matriz.GetLength(0); i++)
+        for (int j = matriz.GetLength(1) - 1; j >= 0; j--)
+        {
+          Console.WriteLine($"{matriz[i, j]}|");
+          i++;
+        }
+    }
   }
 }

@@ -43,6 +43,16 @@ namespace BibliotecaMatriz
           matriz[i, j] = random.Next(0, 100);
     }
 
+    public static void gerarMatrizReduzida(int[,] matriz)
+    {
+      Random random = new Random();
+      int linhas = matriz.GetLength(0);
+      int colunas = matriz.GetLength(1);
+      for (int i = 0; i < linhas; i++)
+        for (int j = 0; j < colunas; j++)
+          matriz[i, j] = random.Next(0, 11);
+    }
+
     public static int buscarMaiorValor(int[,] matriz)
     {
       int maiorValor = matriz[0, 0];

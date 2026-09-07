@@ -98,5 +98,52 @@ namespace BibliotecaMatriz
           i++;
         }
     }
+
+    public static void somarMatrizes(int[,] matrizA, int[,] matrizB)
+    {
+      int linhas = matrizA.GetLength(0);
+      int colunas = matrizA.GetLength(1);
+      int[,] matrizSoma = new int[linhas, colunas];
+
+      for (int i = 0; i < linhas; i++)
+        for (int j = 0; j < colunas; j++)
+          matrizSoma[i, j] = matrizA[i, j] + matrizB[i, j];
+
+      Console.WriteLine("Soma das Matrizes A e B: ");
+      Matriz.mostrarMatriz(matrizSoma);
+    }
+    public static void subtrairMatrizes(int[,] matrizA, int[,] matrizB)
+    {
+      int linhas = matrizA.GetLength(0);
+      int colunas = matrizA.GetLength(1);
+      int[,] matrizSub = new int[linhas, colunas];
+
+      for (int i = 0; i < linhas; i++)
+        for (int j = 0; j < colunas; j++)
+          matrizSub[i, j] = matrizA[i, j] - matrizB[i, j];
+
+      Console.WriteLine("Subtração das Matrizes A e B: ");
+      Matriz.mostrarMatriz(matrizSub);
+    }
+
+    public static void adicionarConstante(int valor, int[,] matrizA, int[,] matrizB)
+    {
+      int linhas = matrizA.GetLength(0);
+      int colunas = matrizA.GetLength(1);
+      int[,] matrizSub = new int[linhas, colunas];
+
+      for (int i = 0; i < linhas; i++)
+        for (int j = 0; j < colunas; j++)
+        {
+          matrizA[i, j] += valor;
+          matrizB[i, j] += valor;
+        }
+
+      Console.WriteLine("Matriz A: ");
+
+      Matriz.mostrarMatriz(matrizA);
+      Console.WriteLine("\nMatriz B: ");
+      Matriz.mostrarMatriz(matrizB);
+    }
   }
 }

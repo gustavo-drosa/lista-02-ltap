@@ -145,5 +145,38 @@ namespace BibliotecaMatriz
       Console.WriteLine("\nMatriz B: ");
       Matriz.mostrarMatriz(matrizB);
     }
+
+    public static void preencherMatrizZero(int[,] matriz)
+    {
+      for (int i = 0; i < matriz.GetLength(0); i++)
+        for (int j = 0; j < matriz.GetLength(1); j++)
+          matriz[i, j] = 0;
+    }
+
+    public static int somarDiagonalPrincipal(int[,] matriz)
+    {
+      int somaDiagPrincipal = 0;
+
+      for (int i = 0; i < matriz.GetLength(0); i++)
+        somaDiagPrincipal += matriz[i, i];
+
+      return somaDiagPrincipal;
+    }
+
+    public static int somarDiagonalSecundaria(int[,] matriz)
+    {
+      int somaDiagSecundaria = 0;
+
+      for (int i = 0; i < matriz.GetLength(0); i++)
+        for (int j = matriz.GetLength(1) - 1; j >= 0; j--)
+        {
+          somaDiagSecundaria += matriz[i, j];
+          i++;
+        }
+
+      return somaDiagSecundaria;
+    }
+
   }
+
 }

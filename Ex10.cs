@@ -1,5 +1,6 @@
 using System;
 using System.Xml;
+using BibliotecaMatriz;
 
 class Ex10
 {
@@ -8,9 +9,7 @@ class Ex10
     int areaTotal = 0;
     int[,] mapa = new int[100, 100];
 
-    for (int i = 0; i < mapa.GetLength(0); i++)
-      for (int j = 0; j < mapa.GetLength(1); j++)
-        mapa[i, j] = 0;
+    Matriz.preencherMatrizZero(mapa);
 
     Console.WriteLine("Total de redes: ");
     int redes = int.Parse(Console.ReadLine()!);
